@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.exam1">
+
+	<!-- 여러행 컬럼 하나 조회  : resultType="기본형데이터형,  Wrapper Class, String"-->
+	<select id="multiRowSingleColumn" resultType="int">
+		select	empno
+		from		emp
+	</select>
+	<!-- 여러행 컬럼여러개 조회  : 사원테이블에서 사원명,직무,입사일,연봉,매니저번호 조회 
+	    iBATIS -> 컬럼명 as setter, MyBatis ->  컬럼명 as  컬럼명별칭
+	-->
+	<select id="multiRowMultiColumn" resultType="kr.co.sist.domain.EmpDomain">
+	select	ename, job, to_char(hiredate,'yyyy-mm-dd hh24:mi:ss day') hiredate , sal, mgr	
+	from		emp
+	</select>
+		
+	
+</mapper>
