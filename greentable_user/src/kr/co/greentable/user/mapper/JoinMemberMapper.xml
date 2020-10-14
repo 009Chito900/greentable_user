@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.greentable.user.joinMember">
+
+<!-- 아이디 중복여부 조회  -->
+	<!-- 골든에서 조회되는데, null이 나올 경우 -> 이클립스 버그   -->
+	<select id="selectId" resultType="String" parameterType="String">
+	select id
+	from member
+	where id=#{ id, jdbcType=VARCHAR}
+	</select>
+
+<!-- 이메일 중복여부 조회  -->
+	<!-- 골든에서 조회되는데, null이 나올 경우 -> 이클립스 버그   -->
+	<select id="selectEmail" resultType="int" parameterType="String">
+	select count(email)
+	from member
+	where email=#{ email, jdbcType=VARCHAR}
+	</select>
+
+<!-- 회원가입 정보 member테이블에 추가 작업 : parameterType에 VO가 입력되기 때문에 #{ getter } -->
+	<insert id="insertJoinMember" parameterType="kr.co.greentable.user.vo.JoinMemberVO">
+		insert into member( id, password, name, email, addr1, addr2, zipcode, phone, join_date, ip, drop_out ) 
+		values(#{id}, #{password, jdbcType=VARCHAR}, #{name, jdbcType=VARCHAR}, #{email, jdbcType=VARCHAR}, #{addr1, jdbcType=VARCHAR}, #{addr2, jdbcType=VARCHAR}, #{zipcode, jdbcType=VARCHAR}, #{phone, jdbcType=VARCHAR}, to_char(sysdate,'yyyy-mm-dd'), #{ip, jdbcType=VARCHAR}, 'N' )
+	</insert>	
+</mapper>

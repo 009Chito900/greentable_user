@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--값을 외부에 설정한 파일과 연결한다.  -->
+	<properties resource="properties/database.properties"/>
+	
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <!-- DB연결 설정 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@211.238.142.30:1521:orcl"/>
+        <property name="username" value="fp"/>
+        <property name="password" value="money"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <!--실행할 쿼리문을 가진 xml 설정  -->
+  <mappers> 
+  	 <mapper resource="kr/co/greentable/user/mapper/UserOrderListMapper.xml"/> 
+  </mappers>
+</configuration>
