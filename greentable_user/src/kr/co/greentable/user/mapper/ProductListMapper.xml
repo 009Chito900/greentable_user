@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main_mapper">
+<select id="select_main_product" resultType="kr.co.greentable.user.domain.MainPLDomain">
+select trim(pro_img_thumb)pro_img_thumb,product_num
+ from
+	(select pro_img_thumb,product_num
+			from product
+			group by pro_img_thumb,product_num
+			order by product_num desc)
+where rownum between 1 and 8
+</select>
+
+<select id="select_main_ctg_product"  parameterType="kr.co.greentable.user.vo.CtgVO" resultType="kr.co.greentable.user.domain.ProductListDomain">
+
+select pro_img_thumb,pro.product_name, min(option_price)option_price,pro_text_info
+from product_option po, product pro, sub_category sc,main_category mc
+where
+po.product_num=pro.product_num
+and pro.sub_ctg_name=sc.sub_ctg_name
+and sc.main_ctg_name=mc.main_ctg_name
+and mc.main_ctg_name=#{ flag  } 
+<if test="sub_flag != null and sub_flag != ''">
+and sc.sub_ctg_nick=#{ sub_flag  } 
+</if>
+
+group by pro_img_thumb,pro.product_name, pro_text_info,pro.product_num	
+order by pro.product_num desc
+</select>
+
+
+<select id="select_sub_ctg_product" parameterType="String" resultType="kr.co.greentable.user.domain.ProductListDomain">
+select pro_img_thumb,pro.product_name, min(option_price)option_price,pro_text_info
+from product_option po, product pro, sub_category sc,main_category mc
+where
+po.product_num=pro.product_num
+and pro.sub_ctg_name=sc.sub_ctg_name
+and sc.main_ctg_name=mc.main_ctg_name
+and sc.sub_ctg_nick=#{ sub_flag  } 
+group by pro_img_thumb,pro.product_name, pro_text_info,pro.product_num	
+order by pro.product_num desc
+</select>
+
+
+<select id="select_sub_category" parameterType="String" resultType="kr.co.greentable.user.domain.SubCtgDomain">
+select sub_ctg_name, sub_ctg_nick
+from sub_category sc, main_category mc
+where
+sc.main_ctg_name=mc.main_ctg_name
+and mc.main_ctg_name=#{ flag  } 
+
+</select>
+
+
+
+
+</mapper>

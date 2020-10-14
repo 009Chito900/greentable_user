@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="askmapper">
+<select id="select_ask"  parameterType="String"  resultType="kr.co.greentable.user.domain.AskDomain">
+select  ask_num,ask_category, ask_subject, ask_date, ask_answer
+from ask
+where id=#{id} 
+</select>
+<select id="select_ask_detail"  parameterType="String"  resultType="kr.co.greentable.user.domain.AskDetailDomain">
+select ask_date,ask_category,ask_subject, ask_content, ask_answer
+from ask
+where ask_num= '${ask_num}'
+</select>
+
+<delete id="delete_ask"  parameterType="String"  >
+delete 
+from ask 
+where ask_num= '${ask_num}'
+</delete>
+
+<insert id="insert_ask" parameterType="kr.co.greentable.user.vo.AskAddVO" >
+insert into ask ( ask_num, id, ask_category, ask_subject, ask_content, ask_date)
+values('ask_'||ask_seq.nextval,'${ id}','${ ask_category}','${ ask_subject}','${ ask_content}',sysdate)
+
+
+</insert>
+
+
+</mapper>
