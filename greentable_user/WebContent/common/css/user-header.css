@@ -1,0 +1,189 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+#wrap {
+    width: 1300px;
+    height: 930px;
+    margin: 0px auto;
+}
+
+#header {
+    width: 100%;
+    margin: 0px auto;
+}
+
+#container {
+    position: relative;
+    width: 1300px;
+    min-height: 500px;
+    margin: 0px auto;
+    margin-top: 40px;
+}
+
+#footer {
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    height: 100px;
+    background-color: #F6F6F6;
+    margin-top: 100px;
+}
+
+.header_navbar {
+    overflow: hidden;
+    background-color: #264429;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.header_navbar a {
+    float: left;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* 전체보기 메뉴의 드롭다운 */
+.dropdown {
+    float: left;
+    z-index: 1;
+}
+
+.dropmenu_wrap {
+    display: flex;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+#drop_content {
+    width: 60vw;
+    height: 370px;
+    padding: 0 50px;
+    z-index: 99;
+    position: absolute; 
+    margin-left: 15%;
+}
+
+/* hidden 클래스를 갖고 있으면 안보임 */
+.hidden {
+    display: none; 
+}
+
+.nav_column {
+    float: left;
+    width: 30.33%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #E7E7E7;
+    border-bottom: 1px solid #dfdfdf;
+    height: 350px;
+}
+
+.nav_column h3 {
+	font-weight: bold;
+}
+
+.nav_column a, h3 {
+    float: none;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.nav_column a:hover {
+    background-color: #F6F6F6;
+    color: #75BC46;
+}
+
+/* 전체보기 뺀 나머지 메뉴 4개 */
+.menu a {
+    margin-left: 200px;
+}
+
+/* 제일 상단의 메뉴 */
+#headerTop a {
+    text-decoration: none;
+    float: right;
+    margin-left: 5px;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+#headerTop a:hover {
+	color: #75BC46;
+}
+
+#cartIcon {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #75BC46;
+    float: right;
+}
+
+/* Logo */
+#logo img {
+    display: block;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-left: 850px;
+    margin-bottom: 15px;
+    width: 200px;
+}
+
+/* Search */
+#search-box {
+    margin-left: 78%;
+    margin-bottom: 10px;
+}
+
+.container-1 {
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.container-1 input#search {
+    width: 300px;
+    height: 50px;
+    padding-left: 45px;
+    border: none F6F6F6;
+    font-size: 12pt;
+}
+
+.container-1 .icon {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 10px;
+    z-index: 1;
+    color: #4f5b66;
+    font-size: 20px;
+}
+
+.container-1 input#search:hover {
+    border: none F6F6F6;
+    outline: none;
+}

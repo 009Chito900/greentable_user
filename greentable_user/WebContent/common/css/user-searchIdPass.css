@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.panel h2 {
+	text-align: center;
+	color: #444444;
+	font-size: 30px;
+	font-weight:bold;
+	margin: 0 0 8px 45px;
+}
+
+.panel p {
+	text-align: center;
+	color: #777777;
+	font-size: 14px;
+	width: 380px;
+	margin-left: 10px;
+	margin-bottom: 25px;
+	line-height: 24px;
+}
+
+.login-form .form-control {
+	width: 400px;
+	border: 1px solid #d4d4d4;
+	border-radius: 4px;
+	font-size: 14px;
+	height: 50px;
+	line-height: 50px;
+}
+
+.main-div {
+	margin: 10px auto 30px;
+	max-width: 38%;
+	padding: 50px 70px 70px 71px;
+}
+
+.login-form .form-group {
+	margin-bottom: 10px;
+}
+
+.login-form  .btn {
+	background: #69AA3E none repeat scroll 0 0;
+	border-color: #69AA3E;
+	color: #ffffff;
+	font-size: 14px;
+	width: 400px;
+	height: 50px;
+	line-height: 50px;
+	padding: 0;
+	margin-top: 10px;
+}
+
+.forgot a, .forgot p {
+	display: inline;
+	text-decoration: none; 
+	padding-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+	color: #777777;
+	font-size: 14px;
+}
+.forgot a:hover {
+	color: #75BC46;
+	text-decoration: none;
+}

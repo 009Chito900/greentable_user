@@ -1,0 +1,85 @@
+@charset "UTF-8";
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+	bottom: -70px;
+}
+
+/* 최신상품 페이지 */
+.blog .carousel-indicators li {
+	background: #a3a3a3;
+	border-radius: 50%;
+	width: 18px;
+	height: 0px;
+}
+
+.blog .carousel-indicators .active {
+	background: #707070;
+}
+/* 최신상품 페이지  끝 */
+.jumbotron {
+	text-align: center;
+	height: 600px;
+	background-color: #F4F4F4;
+	margin-top: 100px;
+}
+
+.jumbotron h1 {
+	font-size: 60px;
+	color: #0A8725;
+	margin-top: 90px;
+	margin-bottom: 20px;
+}
+
+.jumbotron p {
+	font-size: 20px;
+}
+
+.jumbotron .btn {
+	width: 200px;
+	height: 50px;
+	margin-top: 70px;
+	border-radius: 50px;
+}
+
+/* footer-menu img */
+.menu_img {
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+#footerMenuDiv {
+	height: 500px;
+	margin-top: 100px;
+	margin-left: 450px;
+}
+
+#footerMenuTxt1 {
+	left: 580px;
+	top: 2740px;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	color: #fff;
+}
+
+#footerMenuTxt2 {
+	left: 910px;
+	top: 2740px;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	color: #fff;
+}
+
+#footerMenuTxt3 {
+	left: 1230px;
+	top: 2740px;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+}
