@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.greentable.user.payment">
+	
+	<!-- 주문하시는 분의 이름, 휴대폰번호 가져오기 -->
+	<select id="selectMember" parameterType="String" resultType="kr.co.greentable.user.domain.MemberDomain">
+		select	name, phone, zipcode, addr1, addr2
+		from	member
+		where id = #{ id}
+	</select>
+	
+	<select id="selectOrderNum" resultType="String">
+		select 'ord_'||order_seq.nextval orderNum
+		from dual
+	</select>
+
+	<insert id="insertTotalOrder" parameterType="kr.co.greentable.user.vo.ReceiverVO">
+		insert into total_order (order_num, id, order_date, chk_cancle) values ( #{order_num}, #{ id }, to_char(sysdate,'yyyy-mm-dd'), 'N')
+	</insert>
+	
+	<!-- 결제하기: 받으시는 분 정보 -->
+	<insert id="insertReceiver" parameterType="kr.co.greentable.user.vo.ReceiverVO"> 
+		insert into receiver(order_num, receiver_name, receiver_phone, receiver_zipcode, receiver_addr1, receiver_addr2 ) 
+		values(#{order_num}, #{receiver_name}, #{receiver_phone}, #{receiver_zipcode}, #{receiver_addr1}, #{receiver_addr2})
+	</insert>
+	
+	<!-- 결제하기: 결제정보  -->
+	<insert id="insertPayment" parameterType="kr.co.greentable.user.vo.ReceiverVO"> 
+		insert into payment(order_num, bank, credit_num, expiration_month, expiration_year) 
+		values( #{order_num}, #{bank}, #{credit_num}, #{expiration_month}, #{expiration_year} )
+	</insert>
+	
+</mapper>
