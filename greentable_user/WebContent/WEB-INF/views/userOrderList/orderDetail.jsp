@@ -81,7 +81,7 @@ $(function(){
 			<hr style="margin-top: 1%; margin-bottom: 2%" >
 			<table class="table table-bordered">
 					  	<tr>
-					  		<td rowspan="2" style="width: 100px; height: 150px"><img src="../common/images/<c:out value="${ order_detail.pro_img_thumb }"/>" style="width: 100px; height:150px"/></td>
+					  		<td rowspan="2" style="width: 100px; height: 150px"><img src="http://localhost/greentable_user/common/images/<c:out value="${ order_detail.pro_img_thumb }"/>" style="width: 100px; height:150px"/></td>
 					  		<td style="text-align: left"><c:out value="${ order_detail.product_name }"/></td>
 					  	</tr>
 					  	<tr>

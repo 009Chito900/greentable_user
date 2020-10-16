@@ -26,13 +26,13 @@ public class UserOrderListController {
 	 * @param model 
 	 * @return
 	 */
-	@RequestMapping(value = "/user/orderList.do", method = {GET, POST} )
+	@RequestMapping(value = "/orderList.do", method = {GET, POST} )
 	public String orderList(String paramPage, SearchUserOrderListVO suolVO, HttpSession session, Model model) {
 		String url="userOrderList/orderList";
 		//
 		String id=(String)session.getAttribute("user_id");
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {
 			// 
 			suolVO.setId(id);
@@ -76,13 +76,13 @@ public class UserOrderListController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/user/orderDetail.do", method = {GET, POST} )
+	@RequestMapping(value = "/orderDetail.do", method = {GET, POST} )
 	public String orderDetail(ProductDetailVO pdVO, HttpSession session, Model model) {
 		String url="userOrderList/orderDetail";
 		//
 		String id=(String)session.getAttribute("user_id");
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {
 			
 			//service

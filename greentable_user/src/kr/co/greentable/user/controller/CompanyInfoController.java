@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CompanyInfoController {
 
-	@RequestMapping(value="/user/companyInfo.do", method = GET)
+	@RequestMapping(value="/companyInfo.do", method = GET)
 	public String companyInfo() {
 		
 		return "companyInfo/companyInfo";

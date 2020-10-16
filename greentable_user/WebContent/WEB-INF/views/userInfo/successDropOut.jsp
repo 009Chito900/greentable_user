@@ -52,7 +52,7 @@ $(function () {
 $(function(){
 	
 	$("#mainBtn").click(function(){
-		location.href=""; //메인으로 이동
+		location.href="http://localhost/greentable_user/logOut.do"; //메인으로 이동
 	});//click
 	
 }); //ready
@@ -72,7 +72,7 @@ $(function(){
 				<c:import url="/common/jsp/user-left-menu.jsp" />
 			</div>
 			<div id="successDropOutDiv">
-					<img src="../common/images/successDropOut.png" style="width: 75%"/><br/>
+					<img src="http://localhost/greentable_user/common/images/successDropOut.png" style="width: 75%"/><br/>
 			</div>
 			<div id="btnDiv">
 					<button type="button" id="mainBtn" class="btn btn-success">홈으로 이동</button>

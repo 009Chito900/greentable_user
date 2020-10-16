@@ -133,7 +133,7 @@ $(function(){
 					  		</td>
 					  	</tr>
 					  	<tr>
-					  		<td rowspan="2" style="width: 100px; height: 150px"><img src="../common/images/<%= suold.getPro_img_thumb()  %>" style="width: 100px; height:150px"/></td>
+					  		<td rowspan="2" style="width: 100px; height: 150px"><img src="http://localhost/greentable_user/common/images/<%= suold.getPro_img_thumb()  %>" style="width: 100px; height:150px"/></td>
 					  		<td style="width: 100px; height: 75px">주문번호</td>
 					  		<td colspan="6"><%= suond.getOrder_num() %></td>
 					  		<td rowspan="2" style="text-align: center">
@@ -161,11 +161,11 @@ $(function(){
 			}//end else 
 					  %>
 						<div id="page">
-							<span><img src="../common/images/left-arrow.png" style="width: 2%; height: 2%"></span>
+							<span><img src="http://localhost/greentable_user/common/images/left-arrow.png" style="width: 2%; height: 2%"></span>
 							<c:forEach begin="1" end="${total_page }" step="1" var="num">
-								<a href="/greentable_user/user/orderList.do?searchPeriod=all&paramPage=${num }">${ num }</a>
+								<a href="/greentable_user/orderList.do?searchPeriod=all&paramPage=${num }">${ num }</a>
 							</c:forEach>
-							<span><img src="../common/images/right-arrow.png" style="width: 2%; height: 2%"></span>
+							<span><img src="http://localhost/greentable_user/common/images/right-arrow.png" style="width: 2%; height: 2%"></span>
 						</div>
 			</div>
 			

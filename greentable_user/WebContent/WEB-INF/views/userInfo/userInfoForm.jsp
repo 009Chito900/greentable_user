@@ -152,7 +152,7 @@ $(function(){
 	$("[value='취소']").click(function() {
 		//취소버튼을 눌렀을 때 이전 페이지로 이동
 		if(confirm('정보수정을 취소하시겠습니까?')){
-			//페이지 이동
+			location.href='/greentable_user/chkPassInfo.do';
 		}//end if 
 	});//click
 	

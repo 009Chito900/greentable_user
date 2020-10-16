@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-header.css">
 
 <style>
-#container{ text-align: center; margin-left: 15% }
+#container{ text-align: center; margin-left: 18% }
 </style>
 <script type="text/javascript">
 $(function () {
@@ -62,7 +62,7 @@ $(function () {
 		<!-- header -->
 
 		<div id="container">
-		<img src="../common/images/companyInfo.png" style="width: 60%"/>
+		<img src="http://localhost/greentable_user/common/images/companyInfo.png" style="width: 60%"/>
 		</div>
 		<!-- container -->
 		

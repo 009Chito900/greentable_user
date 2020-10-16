@@ -28,7 +28,7 @@
 <script type="text/javascript">
 $(function () {
     alert('${ "비밀번호가 다릅니다. 다시 입력해주세요." }');
-    location.href="/greentable_user/user/chkPassInfo.do";
+    location.href="/greentable_user/chkPassInfo.do";
 });//ready
 </script>
 

@@ -46,8 +46,7 @@
 	</select>
 	
 	<!-- 주문내역 상세보기  -->
-	<select id="selectOrderDetail" resultType="kr.co.greentable.user.domain.UserProductDetailDomain
-	" parameterType="kr.co.greentable.user.vo.ProductDetailVO">
+	<select id="selectOrderDetail" resultType="kr.co.greentable.user.domain.UserProductDetailDomain" parameterType="kr.co.greentable.user.vo.ProductDetailVO">
 	select po.option_price, ol.quantity, pro.pro_img_thumb, pro.product_name, rc.receiver_name,
 	rc.receiver_phone, rc.receiver_addr1, rc.receiver_addr2, rc.receiver_zipcode
 	from product_option po, order_list ol, product pro, receiver rc

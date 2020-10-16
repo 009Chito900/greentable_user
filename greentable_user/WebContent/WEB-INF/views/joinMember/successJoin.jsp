@@ -50,11 +50,11 @@ $(function () {
 <script type="text/javascript">
 $(function(){
 	$("#loginBtn").click(function(){
-		location.href='';
+		location.href='http://localhost/greentable_user/login_frm.do';
 	});//click
 	
 	$("#mainBtn").click(function(){
-		location.href='';
+		location.href='http://localhost/greentable_user/main.do';
 	});//click
 
 }); //ready
@@ -74,7 +74,7 @@ $(function(){
 		<!-- header -->
 
 		<div id="container">
-		<img src="../common/images/joinmember_success.png" style="width: 70%; height: 75%; margin-top: 10%; margin-bottom: 5%"><br/>
+		<img src="http://localhost/greentable_user/common/images/joinmember_success.png" style="width: 70%; height: 75%; margin-top: 10%; margin-bottom: 5%"><br/>
 		<button type="button" id="loginBtn" class="btn btn-success" style="width: 8%; height: 8%; margin-right: 2%">로그인</button>
 		<button type="button" id="mainBtn" class="btn btn-success">메인으로 이동</button>
 		</div>

@@ -81,7 +81,7 @@ $(function(){
 			</div>
 			<div id="chkPassFormDiv" >
 					<div style="background-color: #FAFAFA">
-						<img src="../common/images/chkPass.png"><br/>
+						<img src="http://localhost/greentable_user/common/images/chkPass.png"><br/>
 						<form action="chkPass.do" method="post" name="frm" id="frm">
 							<span style="font-size: 20px; margin-top: 10%; margin-left: 6%; margin-bottom: 10%; margin-right: 8%" >회원 비밀번호</span>
 							<input type="password" placeholder="비밀번호" id="password" name="password" class="form-control" style="width: 40%; display: inline;"><br/>
@@ -90,7 +90,6 @@ $(function(){
 			</div>
 			<div id="btnDiv" style="margin-top: 5%; margin-left: 50%">
 					<button type="button" id="chkPassInfoBtn" class="btn btn-success" style="width: 11%" >확인</button>
-					<button type="button" id="backBtn" class="btn btn-secondary" style="width: 11%" >취소</button>
 			</div>
 		</div>
 		<!-- header -->

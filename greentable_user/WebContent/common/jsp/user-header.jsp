@@ -1,17 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" info="사용자 헤더 메뉴"%>
-	
+<%
+request.setCharacterEncoding("UTF-8");
+
+String user_id="";
+
+user_id = (String) session.getAttribute("user_id");
+
+%>	
+
 <div id="headerTop">
-    <a href="user_cartList.jsp">장바구니</a>
+    <a href='<%= user_id != null ? "http://localhost/greentable_user/cart_list.do" : "http://localhost/greentable_user/login_frm.do" %>'>장바구니</a>
     <i class='fas fa-shopping-cart' id="cartIcon"></i>
-    <a href="service_center.jsp">고객센터</a>
-    <a href="myPage.jsp">마이페이지</a>
-    <a href="joinMember.jsp">회원가입</a>
-    <a href="user_login.jsp">로그인</a>
+    <a href='<%= user_id != null ? "http://localhost/greentable_user/ask_list.do" : "http://localhost/greentable_user/login_frm.do" %>'>고객센터</a>
+    <a href='<%= user_id != null ? "http://localhost/greentable_user/orderList.do?searchPeriod=all" : "http://localhost/greentable_user/login_frm.do" %>'>마이페이지</a>
+    <a href="http://localhost/greentable_user/joinMemberForm.do">회원가입</a>
+    <a href='<%= user_id != null ? "http://localhost/greentable_user/logOut.do" : "http://localhost/greentable_user/login_frm.do" %>'><%= user_id != null ? "로그아웃" : "로그인" %></a>
 </div>
 
 <div id="logo">
-	<a href="user_main.jsp"><img src="/common/images/logo3.png"/></a>
+	<a href="http://localhost/greentable_user/main.do"><img src="common/images/logo3.png"/></a>
 </div>
 
 <div id="search-box">
@@ -29,10 +37,10 @@
             </button>
             
             <div class="menu">
-                <a href="user_menu1.jsp">과수원</a>
-                <a href="user_menu2.jsp">쌀 잡곡</a>
-                <a href="user_menu3.jsp">바다와 강</a>
-                <a href="user_menu4.jsp">회사소개</a>
+                <a href="http://localhost/greentable_user/main_ctg.do?flag=fruits">과수원</a>
+                <a href="http://localhost/greentable_user/main_ctg.do?flag=grains">쌀 잡곡</a>
+                <a href="http://localhost/greentable_user/main_ctg.do?flag=fish">바다와 강</a>
+                <a href="http://localhost/greentable_user/companyInfo.do">회사소개</a>
             </div>
         </div>
     </div>
@@ -42,25 +50,24 @@
     <div class="row">
         <div class="nav_column">
             <h3>과수원</h3>
-            <a href="#">시즌한정과일</a>
-            <a href="#">국산과일</a>
-            <a href="#">수입과일</a>
-            <a href="#">냉동 · 건과일</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fruits&sub_flag=FrImported">수입과일</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fruits&sub_flag=FrDomestic">국산과일</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fruits&sub_flag=FrFrozen">냉동과일</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fruits&sub_flag=FrSeason">시즌한정과일</a>
         </div>
         
         <div class="nav_column">
             <h3>쌀 잡곡</h3>
-            <a href="#">쌀 · 찹쌀 · 현미</a>
-            <a href="#">잡곡</a>
-            <a href="#">견과</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=grains&sub_flag=GrRice">쌀 · 찹쌀 · 현미</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=grains&sub_flag=GrMultiGr">잡곡</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=grains&sub_flag=GrBeans">백태흑태녹두</a>
         </div>
         
         <div class="nav_column">
             <h3>바다와 강</h3>
-            <a href="#">생선류</a>
-            <a href="#">오징어 · 낙지 · 문어</a>
-            <a href="#">해산물 · 조개류</a>
-            <a href="#">김 · 미역 · 해조류</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fish&sub_flag=FshShell">해산물 · 조개류</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fish&sub_flag=FshOcto">오징어 · 낙지 · 문어</a>
+            <a href="http://localhost/greentable_user/main_ctg.do?flag=fish&sub_flag=FshSeaweed">김 · 미역 · 해조류</a>
         </div>
     </div>
 </div>

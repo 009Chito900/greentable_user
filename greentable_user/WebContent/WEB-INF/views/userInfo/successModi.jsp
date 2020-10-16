@@ -28,7 +28,7 @@
 <script type="text/javascript">
 $(function () {
     alert('${ "회원정보가 수정되었습니다." }');
-    location.href="/greentable_user/user/chkPassInfo.do";
+    location.href="/greentable_user/chkPassInfo.do";
 });//ready
 </script>
 

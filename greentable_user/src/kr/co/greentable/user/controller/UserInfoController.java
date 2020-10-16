@@ -24,13 +24,13 @@ public class UserInfoController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkPassInfo.do", method = GET)
+	@RequestMapping(value="/chkPassInfo.do", method = GET)
 	public String chkPassForm(HttpSession session) {
 		String url="userInfo/chkPassForm";
 		//
 		String id=(String)session.getAttribute("user_id");
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}//end if 
 		
 		return url;
@@ -43,14 +43,14 @@ public class UserInfoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkPass.do", method = {GET, POST})
+	@RequestMapping(value="/chkPass.do", method = {GET, POST})
 	public String chkPass(ChkPassVO cpVO, HttpSession session) {
 		String url="";
 		//
 		String id=(String)session.getAttribute("user_id");
 		
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {  
 			//
 			cpVO.setId(id);
@@ -70,7 +70,7 @@ public class UserInfoController {
 			if(flag == 0) { //
 				url="userInfo/failChkPass";
 			}else {
-				url="forward:/user/userInfoForm.do" ;
+				url="login/login_frm" ;
 			}//end else
 		}//end else 
 		
@@ -82,14 +82,14 @@ public class UserInfoController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/userInfoForm.do", method = {GET, POST})
+	@RequestMapping(value="/userInfoForm.do", method = {GET, POST})
 	public String userInfoForm(ChkPassVO cpVO, HttpSession session, Model model) {
 		String url="";
 		//
 		String id=(String)session.getAttribute("user_id");
 		
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {  
 			//
 			cpVO.setId(id);
@@ -119,7 +119,7 @@ public class UserInfoController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/modiChkDupEmailForm.do", method = GET)
+	@RequestMapping(value="/modiChkDupEmailForm.do", method = GET)
 	public String modiChkDupEmailForm(String email ) {
 		
 		
@@ -133,7 +133,7 @@ public class UserInfoController {
 	 * @param model 
 	 * @return
 	 */
-	@RequestMapping(value="/user/modiChkDupEmail.do", method = GET)
+	@RequestMapping(value="/modiChkDupEmail.do", method = GET)
 	public String chkDuplicateEmail(String email, Model model ) {
 		String isDulEmail="";
 		UserInfoService uis=new UserInfoService();
@@ -160,14 +160,14 @@ public class UserInfoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value="/user/modifyUserInfo.do", method = {GET, POST})
+	@RequestMapping(value="/modifyUserInfo.do", method = {GET, POST})
 	public String modifyUserInfo(ModifyUserInfoVO muiVO, HttpSession session, Model model) {
 		String url="";
 		//
 		String id=(String)session.getAttribute("user_id");
 		
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {  
 			//
 			muiVO.setId(id);
@@ -193,14 +193,14 @@ public class UserInfoController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkPassDropOutForm.do", method = {GET, POST})
+	@RequestMapping(value="/chkPassDropOutForm.do", method = {GET, POST})
 	public String dropOutChkPassForm(HttpSession session) {
 		
 		String url="userInfo/dropOutChkPassForm";
 		//
 		String id=(String)session.getAttribute("user_id");
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}//end if 
 		
 		return url;
@@ -214,14 +214,14 @@ public class UserInfoController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value="/user/dropOutChkPass.do", method = {GET, POST})
+	@RequestMapping(value="/dropOutChkPass.do", method = {GET, POST})
 	public String dropOutChkPass(ChkPassVO cpVO, HttpSession session) {
 		String url="";
 		//
 		String id=(String)session.getAttribute("user_id");
 		
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {  
 			//
 			cpVO.setId(id);
@@ -255,14 +255,14 @@ public class UserInfoController {
 	 * @param model
 	 * @return 
 	 */
-	@RequestMapping(value="/user/dropOut.do", method = {GET, POST})
+	@RequestMapping(value="/dropOut.do", method = {GET, POST})
 	public String dropOut(HttpSession session, Model model){
 		String url="userInfo/successDropOut";
 		//
 		String id=(String)session.getAttribute("user_id");
 		
 		if(id == null) {
-			url="redirect:/user/loginForm.do"; //
+			url="login/login_frm"; //
 		}else {  
 			UserInfoService uis=new UserInfoService();
 			uis.removeDropOut(id);

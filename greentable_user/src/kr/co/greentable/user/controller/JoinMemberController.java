@@ -15,13 +15,14 @@ import kr.co.greentable.user.service.JoinMemberService;
 import kr.co.greentable.user.vo.JoinMemberVO;
 import kr.co.sist.util.cipher.DataEncrypt;
 
+
 @Controller
 public class JoinMemberController {
 	/**
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/joinMemberForm.do", method = GET)
+	@RequestMapping(value="/joinMemberForm.do", method = GET)
 	public String joinMemberForm( ) {
 		
 		return "joinMember/joinMemberForm";
@@ -31,7 +32,7 @@ public class JoinMemberController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkDupIdForm.do", method = GET)
+	@RequestMapping(value="/chkDupIdForm.do", method = GET)
 	public String chkDupIdForm( ) {
 		
 		return "joinMember/chkDupIdForm";
@@ -43,7 +44,7 @@ public class JoinMemberController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkDupId.do", method = GET)
+	@RequestMapping(value="/chkDupId.do", method = GET)
 	public String chkDuplicateId(String id, Model model ) {
 		
 		String isDulId="";
@@ -67,7 +68,7 @@ public class JoinMemberController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkDupEmailForm.do", method = GET)
+	@RequestMapping(value="/chkDupEmailForm.do", method = GET)
 	public String chkDupEmailForm(String email ) {
 		
 		
@@ -81,7 +82,7 @@ public class JoinMemberController {
 	 * @param model 
 	 * @return
 	 */
-	@RequestMapping(value="/user/chkDupEmail.do", method = GET)
+	@RequestMapping(value="/chkDupEmail.do", method = GET)
 	public String chkDuplicateEmail(String email, Model model ) {
 		int emailCnt=0;
 		String isDulEmail="";
@@ -107,13 +108,13 @@ public class JoinMemberController {
 	 * @param ip
 	 * @return
 	 */
-	@RequestMapping(value="/user/addJoinMember.do", method = {GET, POST})
+	@RequestMapping(value="/addJoinMember.do", method = {GET, POST})
 	public String addJoinMember(JoinMemberVO jmVO, HttpServletRequest request) {
 		//cnt
 		//ip
 		jmVO.setIp(request.getRemoteAddr());
 		
-		//
+		
 		try {
 			jmVO.setPassword( DataEncrypt.messageDigest("MD5", jmVO.getPassword()));
 		} catch (NoSuchAlgorithmException e) {
