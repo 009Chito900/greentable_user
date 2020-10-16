@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-header.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-header.css">
 
 <style>
 .gallery-title {

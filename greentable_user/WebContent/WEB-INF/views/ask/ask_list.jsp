@@ -21,15 +21,15 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-header.css">
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-left-menu.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-header.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-left-menu.css">
 
 
 <style>
 
 <!--내가 추가  -->
 #container{width:100%; min-height:700px; }
-#left{width:25%; min-height:600px; float:left;  /* background-color: #fffed3; */}
+#left{width:30%; min-height:600px; float:left;  /* background-color: #fffed3; */}
 /*width가 전체 넓이가 아니더라도 div는 기본 width 100%의 영역을 가진다
 float:left를 설정하여 기본 width100프로의 영역에서 width를 설정한 것 까지만 사용  */
 #right1{width:70%; min-height:100px;float:right;  /* background-color: #fffed3  */;}

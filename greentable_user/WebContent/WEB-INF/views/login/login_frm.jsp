@@ -21,8 +21,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-header.css">
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-login.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-header.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-login.css">
 
 <style>
 </style>
@@ -48,51 +48,64 @@ $(function () {
 	    $('#drop_content').addClass('hidden');
 	}
 
-	/* what i did  */
+ 	/* what i did  */
 
-	
+	/* 
 	$("#loginBtn").click(function(){
 
 		chkNull();
 
 		
 		
-	});//click
+	});//click */
 	
-	
-	
-	/* 
-	$(document).keydown(function(event){
-		if(event.keyCode==13){
-		alert("keypressed");
-		}
-		)};
+ 
+
+	$("#loginBtn").click(function(){
+
+		chkNull(evt);
+
+		
+		
+	});//click 
 	
 
-	$("#inputPassword").keydown(function(key) {
-        //키의 코드가 13번일 경우 (13번은 엔터키)
-        if (key.keyCode == 13) {
-            //ID가 alpreah_btn을 찾아 클릭해준다.
-            //버튼 말고도 p태그나 다른 태그도 다 응용 가능 합니다.
-            //대신 이벤트 발생을 위해서는 29번쨰 줄 코드처럼 이벤트를 걸어줘야 합니다.
-            $("#loginBtn").click();
-        }
+		$("#inputEmail").keydown(function(evt) {
 
+			chkNull(evt);
+		});
+		$("#inputPassword").keydown(function(evt) {
+			chkNull(evt);
 
-	function enterkey() {
-        if (window.event.keyCode == 13) {	
-	
-        alert("엔터키");
-        	chkNull();
-        }
-} */
-
-
+		});
 		
 	
 });//ready		
 
-function chkNull(){
+function chkNull(evt) {
+	if (evt.which == 13 || evt.which == 9) {
+		if ($("#inputEmail").val() == "") {
+			alert("아이디 필수 입력");
+			$("#inputEmail").focus();
+			return;
+		}
+	}//end if
+	if (evt.which == 13 ) {
+		if ($("#inputPassword").val() == "") {
+			alert("비밀번호 필수 입력");
+			$("#inputPassword").focus();
+			return;
+		}
+		$("#Login").submit();
+	}//end if
+}//chkPass
+
+
+		
+	
+
+
+/* function chkNull(){
 	
 	 if($("#inputEmail").val() =="" || $("#inputPassword").val()=="" ){
 	
@@ -107,7 +120,7 @@ function chkNull(){
 
 	
 }//chkNull
-
+ */
 	/* what i did */
 
 </script>
@@ -146,7 +159,7 @@ function chkNull(){
 						
 						<button type="button" class="btn btn-primary" id="loginBtn" >Login</button>
 						<div class="forgot">
-							<a href="joinMember.jsp">회원가입</a> | <a href="searchId.jsp">아이디 찾기</a> | <a href="searchPass.jsp">비밀번호 찾기</a>
+							<a href="joinMemberForm.do">회원가입</a> | <a href="">아이디 찾기</a> | <a href="find_pass_frm.do">비밀번호 찾기</a>
 						</div>
 					</form>
 				</div>

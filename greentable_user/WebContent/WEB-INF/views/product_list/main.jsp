@@ -21,8 +21,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-header.css">
-<link rel="stylesheet" type="text/css" href="http://localhost/design_prj/common/css/user-main.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-header.css">
+<link rel="stylesheet" type="text/css" href="common/css/user-main.css">
 
 <style>
 /*what i did  */
@@ -112,10 +112,10 @@ $(document).ready(function() {
 					<div class="carousel-item active">
 					 
 						<!-- 메인이미지 -->
-						<img src="http://localhost/design_prj/common/images/main.png" width="100%" height="970px"/>
+						<img src="common/images/main.png" width="100%" height="970px"/>
 					</div>
 					<div class="carousel-item">
-						<img src="http://localhost/design_prj/common/images/main2.png" width="100%" height="970px"/>
+						<img src="common/images/main2.png" width="100%" height="970px"/>
 					</div>
 				</div>
 
@@ -134,7 +134,7 @@ $(document).ready(function() {
 
 		<div class="float_sidebar">
 			<a href="service_center.jsp">
-			<img src="http://localhost/design_prj/common/images/chatbot.gif" align="right" style="margin-top: 50px; margin-right: 20px"/></a>
+			<img src="/common/images/chatbot.gif" align="right" style="margin-top: 50px; margin-right: 20px"/></a>
 		</div>
 		
 		<div id="container">
@@ -202,11 +202,11 @@ $(document).ready(function() {
 		
 		<!-- footer-menu -->
 		<div id="footerMenuDiv">
-			<a href="main_ctg.do?flag=fruits"><img src="http://localhost/design_prj/common/images/menu1.png" class="menu_img" height="400px"/></a>
+			<a href="main_ctg.do?flag=fruits"><img src="common/images/menu1.png" class="menu_img" height="400px"/></a>
 			<div id="footerMenuTxt1"> 과수원</div>
-			<a href="main_ctg.do?flag=grains"><img src="http://localhost/design_prj/common/images/menu2.png" class="menu_img" height="400px"/></a>
+			<a href="main_ctg.do?flag=grains"><img src="common/images/menu2.png" class="menu_img" height="400px"/></a>
 			<div id="footerMenuTxt2"> 쌀 잡곡</div>
-			<a href="main_ctg.do?flag=fish"><img src="http://localhost/design_prj/common/images/menu3.png" class="menu_img" height="400px"/></a>
+			<a href="main_ctg.do?flag=fish"><img src="common/images/menu3.png" class="menu_img" height="400px"/></a>
 			<div id="footerMenuTxt3"> 바다와 강</div>
 		</div> 
 		
